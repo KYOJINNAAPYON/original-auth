@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Livewire\UserIndex;
+use App\Livewire\Register;
+use App\Livewire\Login;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('home');
+Route::view('/', 'layouts.app')->middleware('auth')->name('home');
+
+Route::get('/user-index', UserIndex::class);
+Route::get('/register', Register::class);
+Route::get('/login', Login::class)->name('login');
