@@ -19,6 +19,7 @@ use App\Livewire\Login;
 
 Route::view('/', 'layouts.app')->middleware('auth')->name('home');
 
-Route::get('/user-index', UserIndex::class);
+Route::get('/', UserIndex::class)->middleware('auth')->name('home');
+Route::get('/user-index', UserIndex::class)->middleware('auth');
 Route::get('/register', Register::class);
 Route::get('/login', Login::class)->name('login');
