@@ -12,7 +12,7 @@ class UserIndex extends Component
     
     public function render()
     {
-        $users = User::paginate(5);
+        $users = User::orderBy('created_at')->paginate(5);
         
         return view('livewire.user-index',[
           'users' => $users
