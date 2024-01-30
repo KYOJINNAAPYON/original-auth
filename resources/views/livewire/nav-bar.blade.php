@@ -12,18 +12,18 @@
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
             @guest
-            <a href="/login" wire:navigate class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="/login" wire:navigate class="block mt-4 lg:inline-block md:mt-0 sm:hidden text-teal-200 hover:text-white mr-4">
                 Login
             </a>
-            <a href="/register" wire:navigate class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a href="/register" wire:navigate class="block mt-4 lg:inline-block md:hidden lg:mt-0 text-teal-200 hover:text-white mr-4">
                 Register
             </a>
             @endguest            
             @auth
-            <a wire:navigate href="/user-index" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <a wire:navigate href="/user-index" class="block mt-4 lg:inline-block md:hidden lg:mt-0 text-teal-200 hover:text-white mr-4">
                 Users
             </a>
-            <button wire:click="logout" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            <button wire:click="logout" class="block mt-4 lg:inline-block md:hidden lg:mt-0 text-teal-200 hover:text-white mr-4">
                 Logout
             </button>
             @endauth
